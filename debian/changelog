@@ -1,0 +1,5 @@
+pyroboy (2.0.0-1) xenial; urgency=low
+
+  * Roboy ROS2 python interface
+
+ -- Alona Kharchenko <unicorn@roboy.org>  Sat, 20 May 2017 13:39:27 +0200
