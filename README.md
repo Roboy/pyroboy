@@ -7,12 +7,12 @@ sudo apt update
 sudo apt install ros-kinetic-roboy-msgs ros-bouncy-roboy-msgs ros-bouncy-roboy-ros1-bridge pyroboy
 
 # start service clients
-# source /opt/ros/kinetic/setup.bash
+source /opt/ros/kinetic/setup.bash
 roslaunch roboy_speech_recognition speech_recognition.launch &
 roslaunch speech_synthesis speech_synthesis.launch 
 
 # start ros1_bridge
-# source /opt/ros/boucny/setup.bash
+source /opt/ros/boucny/setup.bash && source /opt/ros/kinetic/setup.bash
 ros2 run ros1_bridge dynamic_bridge
 
 # test pyroboy
