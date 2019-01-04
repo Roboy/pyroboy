@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>pyroboy</name>
+  <version>0.0.1</version>
+  <description>Package containing Roboy interfaces.</description>
+  <maintainer email="unicorn@roboy.org">Alona Kharchenko</maintainer>
+  <license>BDS-3</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>roboy_cognition_msgs</exec_depend>
+  <exec_depend>roboy_simulation_msgs</exec_depend>
+  <exec_depend>roboy_control_msgs</exec_depend>
+  <exec_depend>roboy_middleware_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
