@@ -24,8 +24,9 @@ class TTS:
         req = srv.type.Request()
         req.text = text
         if not client.wait_for_service(timeout_sec=1.0):
-            self.node.get_logger().info("Service {} is not available. Stopping..."
+            self.node.get_logger().info("Service {} is not available."
                                     .format(speech_synthesis_en_srv.name))
+            return
 
         res = client.call_async(req)
 
