@@ -20,13 +20,13 @@ export COLCON_CURRENT_PREFIX=/opt/ros/bouncy
 export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG
 
 # Python package installation variables
-export PYBUILD_SYSTEM=custom
-export PYBUILD_CLEAN_ARGS=rm -rf {build_dir}/python3.6/
-export PYBUILD_CONFIGURE_ARGS=./configure --python=3.6
-export PYBUILD_BUILD_ARGS=make build --dir={build_dir} --python=3.6
+#export PYBUILD_SYSTEM=custom
+#export PYBUILD_CLEAN_ARGS=rm -rf {build_dir}/python3.6/
+#export PYBUILD_CONFIGURE_ARGS=./configure --python=3.6
+#export PYBUILD_BUILD_ARGS=make build --dir={build_dir} --python=3.6
 #export PYBUILD_INSTALL_ARGS=make --destdir={destdir} --python={version} --install-dir={install_dir}
 #export PYBUILD_TEST_ARGS_python2=cd {build_dir}; nosetests
-export PYBUILD_TEST_ARGS_python3=cd {build_dir}; python3.6 -m discover
+#export PYBUILD_TEST_ARGS_python3=cd {build_dir}; python3.6 -m discover
 
 export PYBUILD_INSTALL_ARGS=--prefix "/opt/ros/bouncy" \
 	--install-lib "\$$base/lib/{interpreter}/site-packages" \
