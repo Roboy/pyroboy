@@ -36,6 +36,4 @@ class FaceRec:
         distances = fr.face_distance(known_faces, new_face)
         confidences = [FaceRec.face_distance_to_conf(d, face_match_threshold=face_match_threshold) for d in distances]
         index_max = np.argmax(confidences)#max(xrange(len(confindences)), key=confindences.__getitem__)
-        print("max index: %i"%index_max)
-        # print("conf: %d"%confidences[index_max])
         return index_max, confidences[index_max]
