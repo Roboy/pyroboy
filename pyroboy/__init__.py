@@ -39,6 +39,7 @@ def listen(discard_on_say=True):
     # Discard text that was recorded while speech synthesis was running
     if discard_on_say and say_start_timestamp > listen_start_timestamp:
         result_text = None
+    return result_text
 
 def show_emotion(emotion):
     if pr.emotion_publisher is None:
