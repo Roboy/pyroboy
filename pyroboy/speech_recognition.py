@@ -18,7 +18,7 @@ class STT:
 
         res = self.client.call_async(req)
 
-        rclpy.spin_until_future_complete(self.node, res)
+        #rclpy.spin_until_future_complete(self.node, res)
 
         if res.result() is None:
              self.node.get_logger().info('Service call failed %r' % (res.exception(),))
