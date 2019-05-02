@@ -1,5 +1,6 @@
 import rclpy
 from pyroboy.common_definitions import speech_synthesis_en_srv, speech_synthesis_de_srv
+from time import sleep
 
 class TTS:
 
@@ -29,8 +30,8 @@ class TTS:
             return
 
         res = client.call_async(req)
-
-        rclpy.spin_until_future_complete(self.node, res)
+        while not res.done():
+            sleep(.2)
 
         if res.result() is None:
              self.node.get_logger().info('Service call failed %r' % (res.exception(),))

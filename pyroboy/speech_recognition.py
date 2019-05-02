@@ -1,5 +1,6 @@
 import rclpy
 from pyroboy.common_definitions import speech_recognition_srv
+from time import sleep
 
 class STT:
 
@@ -17,8 +18,8 @@ class STT:
             return
 
         res = self.client.call_async(req)
-
-        #rclpy.spin_until_future_complete(self.node, res)
+        while not res.done():
+            sleep(.2)
 
         if res.result() is None:
              self.node.get_logger().info('Service call failed %r' % (res.exception(),))
