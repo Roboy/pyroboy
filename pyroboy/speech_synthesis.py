@@ -30,8 +30,9 @@ class TTS:
             return
 
         res = client.call_async(req)
-        while not res.done():
-            sleep(.2)
+        rclpy.spin_until_future_complete(self.node, res)
+#         while not res.done():
+#             sleep(.2)
 
         if res.result() is None:
              self.node.get_logger().info('Service call failed %r' % (res.exception(),))
