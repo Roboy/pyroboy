@@ -10,16 +10,16 @@ class Pyroboy():
         self.stt = None
         self.emotion_publisher = None
 
+
     def init_tts(self):
-        rospy.loginfo("init TTS")
         self.tts = TTS()
 
     def init_stt(self):
-        rospy.loginfo("init STT")
         self.stt = STT()
 
     def init_face(self):
-        self.emotion_publisher = rospy.Publisher(emotion_pub.name, emotion_pub.type)
+        self.emotion_publisher = rospy.Publisher(emotion_pub.name, emotion_pub.type, queue_size=1)
+
 
 
 listen_start_timestamp = 0
