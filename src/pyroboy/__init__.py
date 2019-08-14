@@ -23,21 +23,25 @@ class Pyroboy():
 
 
 listen_start_timestamp = 0
-say_start_timestamp = 0
+say_end_timestamp = 0
 
 def say(text, language="en"):
     if pr.tts is None:
         pr.init_tts()
-    say_start_timestamp = time.time()
-    return pr.tts.generate(text, language)
+    global say_end_timestamp
+    result = pr.tts.generate(text, language)
+    say_end_timestamp = time.time()
+    return result
 
 def listen(discard_on_say=True):
     if pr.stt is None:
         pr.init_stt()
+    global say_end_timestamp
     listen_start_timestamp = time.time()
     result_text = pr.stt.recognize_speech()
     # Discard text that was recorded while speech synthesis was running
-    if discard_on_say and say_start_timestamp > listen_start_timestamp:
+    if discard_on_say and say_end_timestamp > listen_start_timestamp:
+        print("Discarded: " + str(result_text))
         result_text = None
     return result_text
 
