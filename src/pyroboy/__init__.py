@@ -69,6 +69,8 @@ def leds(mode="off"):
     else:
         mode_id = 0
         print("unknow mode for matrix leds")
+    print("publishing mode: ")
+    print(mode_id)
     pr.leds_publisher.publish(mode_id)
 
 
