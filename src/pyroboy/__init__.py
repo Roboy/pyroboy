@@ -81,4 +81,5 @@ def init():
         rospy.logwarn("pyroboy did not find any active nodes in this process. Creating my own ROS node... Call rospy.init_node() before pyroboy.init() if you wish otherwise\n")
     else:
         rospy.loginfo("pyroboy is running under the %s node" % rospy.get_name())
+init()
 pr = Pyroboy()
